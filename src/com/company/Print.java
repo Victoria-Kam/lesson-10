@@ -26,11 +26,28 @@ public class Print {
         System.out.println("the parth of " + str1 + " isn't equals with " + str2);
     }
 
-    public void printChechStringYes(){
+    public void printChechStringYes() {
         System.out.println("yes, it is");
     }
 
-    public void printChechStringNo(){
+    public void printChechStringNo() {
         System.out.println("no, it isn't");
+    }
+
+    public void printSeparator() {
+        System.out.println("\nДополнительные задания\n************************************************************************************************");
+    }
+
+
+    public void printFindShotSubstring(String originalString, String string) {
+        System.out.println("В строке \"" + originalString + "\" оследняя короткая подстрока - " + string);
+    }
+
+    public void printFindLongSubstring(String originalString, String string) {
+        System.out.println("В строке \"" + originalString + "\" последняя длинная подстрока - " + string);
+    }
+
+    public void printMinimumSubstringDifferences(String originalString, StringBuilder rezult) {
+        System.out.println("В строке \"" + originalString + "\" минимальное различие символов в первой подстроке - " + rezult);
     }
 }
