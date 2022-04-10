@@ -2,12 +2,12 @@ package com.company;
 
 public class Print {
 
-    public void printFindFirstTwoBlocks(String[] strings) {
-        System.out.println(strings[0] + "\t" + strings[2]);
+    public void printFindFirstTwoBlocks(String first, String second) {
+        System.out.println(first + " " + second);
     }
 
-    public void printChangeLetters(String[] strings) {
-        System.out.println(strings[1].replace('c', '*') + "\t" + strings[3].replace('c', '*'));
+    public void printChangeLetters(StringBuilder strings) {
+        System.out.println(strings);
     }
 
     public void printOnlyLetters(String[] strings, String string) {

@@ -9,16 +9,12 @@ public class AdditionalTask {
         string = string.replaceAll("\\s+", " ").trim();     // лишние пробелы заменяем одним
         String[] strings = string.split(" ");
 
-        String temp;
         String shot = strings[0];
 
         for (int i = 0; i < strings.length; i++) {
             if (shot.length() > strings[i].length()) {
-                temp = strings[i];
-                strings[i] = shot;
-                shot = temp;
-            }
-            if (shot.length() == strings[i].length()) {
+                shot = strings[i];
+            } else if (shot.length() == strings[i].length()) {
                 shot = strings[i];
             }
         }
@@ -29,16 +25,12 @@ public class AdditionalTask {
         string = string.replaceAll("\\s+", " ").trim();     // лишние пробелы заменяем одним
         String[] strings = string.split(" ");
 
-        String temp;
         String longString = strings[0];
 
         for (int i = 0; i < strings.length; i++) {
             if (longString.length() < strings[i].length()) {
-                temp = strings[i];
-                strings[i] = longString;
-                longString = temp;
-            }
-            if (longString.length() == strings[i].length()) {
+                longString = strings[i];
+            } else if (longString.length() == strings[i].length()) {
                 longString = strings[i];
             }
         }
@@ -47,7 +39,7 @@ public class AdditionalTask {
 
 
     public static void minimumSubstringDifferences(String string) {
-        string = string.replaceAll("\\s+", " ").trim();     // лишние пробелы заменяем одним
+        /*string = string.replaceAll("\\s+", " ").trim();     // лишние пробелы заменяем одним
         String[] str = string.split(" ");
         String[][] strings = new String[str.length][];
         for (int i = 0; i < str.length; i++) {
@@ -73,7 +65,7 @@ public class AdditionalTask {
             break;
         }
 
-        print.printMinimumSubstringDifferences(string, rezult);
+        print.printMinimumSubstringDifferences(string, rezult);*/
 
     }
 
