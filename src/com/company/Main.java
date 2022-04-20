@@ -1,16 +1,43 @@
 package com.company;
 
+import com.company.Task11.Exceptions.ExistException;
+import com.company.Task11.Exceptions.FirstSubException;
+import com.company.Task11.Exceptions.LastSubException;
+import com.company.Task10.AdditionalTask;
+import com.company.Task10.TaskFive;
+import com.company.Task10.TaskFour;
+import com.company.Task10.TaskOne;
+
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
-        String string = "5555-ccc-5555-ccc-1a3b-abc";
+        String string = "5555-ccc-5555-abc-ccc-1a2b";
         String string1 = "abc";
         System.out.println(string);
 
-        TaskOne.findFirstTwoBlocks(string);
+        try {
+            TaskOne.findFirstTwoBlocks(string);
+        } catch (FirstSubException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+
+        try {
+            TaskOne.findLastSubstring(string);
+        }catch (LastSubException e){
+            e.printStackTrace();
+            System.out.println(e);
+        }
+
+        try {
+            TaskOne.isThereASubstring(string);
+        }catch (ExistException e){
+            e.printStackTrace();
+            System.out.println(e);
+        }
         TaskOne.changeLetters(string);
         TaskOne.onlyLetters(string);
         TaskOne.lettersWithStringBuilder(string);
@@ -23,7 +50,7 @@ public class Main {
         String str = "        fhj 67 2  3  fggh rgrgh    aaaaaaa bbbbbbb fgrt ";
         AdditionalTask.findShotSubstring(str);
         AdditionalTask.findLongSubstring(str);
-        //AdditionalTask.minimumSubstringDifferences("333 fffff ab f 1234 jkjk");
+        AdditionalTask.minimumSubstringDifferences("fffff ab f 1234 jkjk");
 
         Scanner scan = new Scanner(System.in);
         int substringNumber=0;

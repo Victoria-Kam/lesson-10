@@ -1,4 +1,6 @@
-package com.company;
+package com.company.Task10;
+
+import com.company.Print;
 
 public class AdditionalTask {
 
@@ -39,37 +41,40 @@ public class AdditionalTask {
 
 
     public static void minimumSubstringDifferences(String string) {
-        /*string = string.replaceAll("\\s+", " ").trim();     // лишние пробелы заменяем одним
-        String[] str = string.split(" ");
-        String[][] strings = new String[str.length][];
-        for (int i = 0; i < str.length; i++) {
-            strings[i] = str[i].split("");
-        }
 
-        String min;
-        StringBuilder rezult = new StringBuilder();
-        boolean isFinded = false;
+        string = string.replaceAll("\\s+", " ").trim();
+        String[] strings = string.split(" ");
+        String minSymOfString = strings[0];
 
-        for (int i = 0; i < strings.length; i++) {
-            min = strings[i][0];                                // начальный элемент для поиска в строке
-            if (!isFinded) {
-                for (int j = 0; j < strings[i].length; j++) {
-                    // System.out.print(strings[i][j]);
-                    if (min.equals(strings[i][j])) {
-                        rezult.append(strings[i][j]);
-                        min = strings[i][j];
-                    }
-                }
-                isFinded = true;
+        for(int i = 1; i < strings.length; i++){
+
+            if(findMinimumSubstring(minSymOfString) > findMinimumSubstring(strings[i])){
+                minSymOfString = strings[i];
+                break;
             }
-            break;
         }
 
-        print.printMinimumSubstringDifferences(string, rezult);*/
-
+        System.out.println(minSymOfString);
     }
 
     public static Print getPrint() {
         return print;
     }
+
+    private static int findMinimumSubstring(String str) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        String[] strings = str.split("");
+        String temp;
+
+        for (int i = 0; i < strings.length; i++) {
+            temp = strings[i];
+            if (stringBuilder.indexOf(temp) == -1) {
+                stringBuilder.append(temp);
+            }
+        }
+        return stringBuilder.length();
+    }
+
 }

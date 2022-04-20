@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Task10;
 
 import java.util.Arrays;
 
@@ -29,10 +29,9 @@ public class TaskFour {
     public boolean isPalindrome() {
         stringBuilder = new StringBuilder(strings[position]);
 
-        stringBuilder.reverse().toString();
         String str = strings[position];
 
-        boolean isEquals = str.equals(stringBuilder);           // что-то не работает -_-
+        boolean isEquals = str.equals(stringBuilder.reverse().toString());
 
         return isEquals;
     }
